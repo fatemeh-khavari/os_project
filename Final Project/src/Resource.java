@@ -14,7 +14,7 @@ public class Resource {
 
     }
 
-    void setAlloacate(Task task){
+    void setAllocate(Task task){
         //todo
         this.state = "disavailabe";
         this.belongTo = task;

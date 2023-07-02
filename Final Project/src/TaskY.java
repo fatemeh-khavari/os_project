@@ -8,4 +8,8 @@ public class TaskY extends Task{
         resources[0] = new String[]{"R2","0"};
         resources[1]=  new String[]{"R3","0"};
     }
+    @Override
+    public String[][] getResources() {
+        return resources;
+    }
 }

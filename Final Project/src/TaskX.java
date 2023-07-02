@@ -9,5 +9,8 @@ public class TaskX extends Task {
         resources[1]=  new String[]{"R2","0"};
 
     }
-
+    @Override
+    public String[][] getResources() {
+        return resources;
+    }
 }
