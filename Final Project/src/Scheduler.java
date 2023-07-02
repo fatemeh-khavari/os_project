@@ -8,7 +8,9 @@ public class Scheduler {
     Task nowTask;
     Resource res[];
     int waitingNum;
-    public Scheduler(int r1, int r2, int r3, Task[] tasks){
+    int quantum;
+    int time;
+    public Scheduler(int r1, int r2, int r3, Task[] tasks, int quantum){
         this.R1 = new Resource[r1];
         this.R2 = new Resource[r2];
         this.R3 = new Resource[r3];
@@ -16,6 +18,8 @@ public class Scheduler {
         this.nowTask = null;
         this.res = new Resource[2];
         waitingNum = 0;
+        this.quantum = quantum;
+        this.time = 1;
     }
 
     void Scheduling (){
@@ -40,90 +44,159 @@ public class Scheduler {
     void FCFS(){
 
     }
-    void RR(){
-        Task before = nowTask;
-        boolean isSet = false;
-        Task min_task = nowTask;
-        int min_timer = nowTask.getTimeToRun();
-        this.sort(ready);
+    void RR(int time){
 
-        if(nowTask.getTimeToRun() == 0){
+        if(time == 1){
+            sort(ready);
+            nowTask = ready[0];
+            nowTask.state = "running";
+            nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+            nowTask.resources[0][1] = "1";
+            nowTask.resources[1][1] = "1";
+            isFreeResource(nowTask.getResources()[0][0], 1 );
+            isFreeResource(nowTask.getResources()[1][0], 2);
+            res[0].setAllocate(nowTask);
+            res[1].setAllocate(nowTask);
+            delete_ready(0);
+        }
+        else if(nowTask.getTimeToRun() == 0){//finish
+            this.sort(ready);
+            boolean isSet = false;
+            // finish task
             Resource num1_nowTask = nowTask.num1;
             Resource num2_nowTask = nowTask.num2;
             num1_nowTask.getFree();
             num2_nowTask.getFree();
+            nowTask.state = "finish";
+            nowTask.getResources()[0][1] = "0";
+            nowTask.getResources()[1][1] = "0";
+
             for (int i = 0; i < ready.length; i++){
-                if(isFreeResource(ready[i].getResources()[0][0], 1) && isFreeResource(ready[i].getResources()[1][0], 2) ){
-                        ready[i].state = "running";
-                        nowTask = ready[i];
-                        delete_ready(i);
-                        res[0].setAllocate(nowTask);
-                        res[1].setAllocate(nowTask);
-                        nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
-                        nowTask.getResources()[0][1] = "1";
-                        nowTask.getResources()[1][1] = "1";
-                        isSet = true;
-                        break;
+                String[][] resourseTask = ready[i].getResources();
+
+                if(resourseTask[0][1].equals("1") && resourseTask[1][1].equals("1")){
+                    //they have resorces
+                    nowTask = ready[i];
+                    delete_ready(i);
+                    nowTask.state = "running";
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+                    isSet = true;
+                    break;
+                }
+                else if (resourseTask[0][1].equals("1") && isFreeResource(resourseTask[1][0], 1)){
+                    nowTask = ready[i];
+                    delete_ready(i);
+                    res[0].setAllocate(nowTask);
+                    resourseTask[1][1] = "1";
+                    nowTask.state = "running";
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+                    isSet = true;
+                    break;
+                }
+                else if (resourseTask[1][1].equals("1") && isFreeResource(resourseTask[0][0], 1)){
+                    nowTask = ready[i];
+                    delete_ready(i);
+                    res[0].setAllocate(nowTask);
+                    resourseTask[0][1] = "1";
+                    nowTask.state = "running";
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+                    isSet = true;
+                    break;
+                }
+                else if(isFreeResource(resourseTask[0][0], 1) && isFreeResource(resourseTask[1][0], 2) ){
+                    nowTask = ready[i];
+                    delete_ready(i);
+                    res[0].setAllocate(nowTask);
+                    res[1].setAllocate(nowTask);
+                    resourseTask[0][1] = "1";
+                    resourseTask[1][1] = "1";
+                    nowTask.state = "running";
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+                    isSet = true;
+                    break;
                 }
                 else {
-                    waiting[waitingNum ] = ready[i];
+                    nowTask.state = "waiting";
+                    waiting[waitingNum] = ready[i];
                     waitingNum++;
-                    ready[i].state = "waiting";
                     delete_ready(i);
                 }
             }
-            if (! isSet){
-                //todo from waiting add ready
+            if (!isSet){
+                //todo for waiting and ready is null
             }
-
         }
-        else{
+        else if(time % quantum  == 0){
+
+            add_ready(nowTask);
+            nowTask.state = "ready";
+            this.sort(ready);
+            boolean isSet = false;
+            // finish task
             Resource num1_nowTask = nowTask.num1;
             Resource num2_nowTask = nowTask.num2;
             num1_nowTask.getFree();
             num2_nowTask.getFree();
+            nowTask.state = "finish";
+            nowTask.getResources()[0][1] = "0";
+            nowTask.getResources()[1][1] = "0";
 
             for (int i = 0; i < ready.length; i++){
-                if (ready[i].getTimeToRun() < min_timer){
-                    min_task = ready[i];
-                    String res1 = min_task.getResources()[0][0];
-                    String res2 = min_task.getResources()[1][0];
+                String[][] resourseTask = ready[i].getResources();
 
-                    if(this.isFreeResource(res1,  1) && this.isFreeResource(res2, 2) ){
-
-                        nowTask.state = "ready";
-                        add_ready(nowTask);
-
-                        delete_ready( i);
-                        res[0].setAllocate(min_task);
-                        res[1].setAllocate(min_task);
-                        min_task.getResources()[0][1] = "1";
-                        min_task.getResources()[1][1] = "1";
-                        nowTask = min_task;
-                        nowTask.state = "running";
-                        nowTask.setTimeToRun(min_task.getTimeToRun() - 1);
-                        isSet = true;
-                        break;
-                    }
-                    else {
-
-                        waiting[waitingNum] = min_task;
-                        waitingNum++;
-                        min_task.state = "waiting";
-                        min_task = before;
-                        delete_ready(i);
-                    }
-                }
-                if(!isSet){
-                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
-                    nowTask = before;
+                if(resourseTask[0][1].equals("1") && resourseTask[1][1].equals("1")){
+                    //they have resorces
+                    nowTask = ready[i];
+                    delete_ready(i);
                     nowTask.state = "running";
-                    num1_nowTask.setAllocate(nowTask);
-                    num2_nowTask.setAllocate(nowTask);
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
                     isSet = true;
+                    break;
+                }
+                else if (resourseTask[0][1].equals("1") && isFreeResource(resourseTask[1][0], 1)){
+                    nowTask = ready[i];
+                    delete_ready(i);
+                    res[0].setAllocate(nowTask);
+                    resourseTask[1][1] = "1";
+                    nowTask.state = "running";
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+                    isSet = true;
+                    break;
+                }
+                else if (resourseTask[1][1].equals("1") && isFreeResource(resourseTask[0][0], 1)){
+                    nowTask = ready[i];
+                    delete_ready(i);
+                    res[0].setAllocate(nowTask);
+                    resourseTask[0][1] = "1";
+                    nowTask.state = "running";
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+                    isSet = true;
+                    break;
+                }
+                else if(isFreeResource(resourseTask[0][0], 1) && isFreeResource(resourseTask[1][0], 2) ){
+                    nowTask = ready[i];
+                    delete_ready(i);
+                    res[0].setAllocate(nowTask);
+                    res[1].setAllocate(nowTask);
+                    resourseTask[0][1] = "1";
+                    resourseTask[1][1] = "1";
+                    nowTask.state = "running";
+                    nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+                    isSet = true;
+                    break;
+                }
+                else {
+                    nowTask.state = "waiting";
+                    waiting[waitingNum] = ready[i];
+                    waitingNum++;
+                    delete_ready(i);
                 }
             }
         }
+        else {//do before task
+           nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+        }
+
 
 
     }

@@ -12,9 +12,12 @@ public class Main {
         int numberTask = scanner.nextInt();
         Task[] tasks = new Task[numberTask];
 
+        int quantum = 0;
+
         for (int i = 0; i < numberTask; i++){
             String str = scanner.nextLine();
             String strings[] = str.split(" ");
+            quantum += Integer.parseInt(strings[2]);
             if( strings[1].equalsIgnoreCase("X") ){
                 tasks[i] = new TaskX(strings[0], Integer.parseInt(strings[2]));
             }
@@ -25,7 +28,8 @@ public class Main {
                 tasks[i] = new TaskZ(strings[0], Integer.parseInt(strings[2]));
             }
         }
-        Scheduler scheduler = new Scheduler(r1, r2, r3, tasks);
+        quantum = quantum * 8 / 10;
+        Scheduler scheduler = new Scheduler(r1, r2, r3, tasks, quantum);
 
 
     }
