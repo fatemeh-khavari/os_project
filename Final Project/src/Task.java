@@ -14,6 +14,7 @@ public class Task {
         this.name = name;
         num1 = null;
         num2 = null;
+        this.resources = new String[2][];
     }
 
     public void setPriority(int priority) {
