@@ -4,6 +4,7 @@ public class Task {
     int timeToRun;
     String name;
     String[][] resources;
+    Resource num1, num2;
 
 
     public Task(String name, int priority, int timeToRun){
@@ -11,6 +12,8 @@ public class Task {
         this.timeToRun = timeToRun;
         this.state = "None";
         this.name = name;
+        num1 = null;
+        num2 = null;
     }
 
     public void setPriority(int priority) {
