@@ -35,7 +35,8 @@ public class Main {
         }
         quantum = quantum * 8 / 10 / numberTask;
         Scheduler scheduler = new Scheduler(r1, r2, r3, tasks, quantum);
-        scheduler.Scheduling();
+        // 0 = fcfs - 1 = sfj -- 2 = rr
+        scheduler.Scheduling(1);
 
 
     }

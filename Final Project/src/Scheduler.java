@@ -32,11 +32,19 @@ public class Scheduler {
         this.waiting = new Task[tasks.length];
     }
 
-    void Scheduling (){
+    void Scheduling (int i ){
         while (true){
             if(readyNum == 0 && waitingNum == 0 && nowTask.getTimeToRun() == 0)  break;
             //TODO algorithm give a task
-            this.RR(time);
+             if (i == 0){
+                 this.FCFS();
+             }else if (i == 1){
+                 this.SJF();
+             }
+             else {
+                 this.RR(time);
+             }
+
             System.out.println("Time : "  + time + " - Now Task: " + nowTask.name);
             System.out.println("quantum: " + quantum);
             print_resource();
@@ -47,12 +55,9 @@ public class Scheduler {
         }
     }
 
-    void SJF(){
 
-    }
-    void FCFS(){
 
-    }
+
     void RR(int time){
         boolean isSet = false;
         if(time == 1){
