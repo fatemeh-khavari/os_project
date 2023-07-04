@@ -103,7 +103,50 @@ public class Scheduler {
     }
 
     
+        void FCFS(){
+        if(time == 1){
+            nowTask = ready[0];
+            nowTask.state = "running";
+            nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+            nowTask.resources[0][1] = "1";
+            nowTask.resources[1][1] = "1";
+            isFreeResource(nowTask.getResources()[0][0], 1 );
+            isFreeResource(nowTask.getResources()[1][0], 2 );
+            res[0].setAllocate(nowTask);
+            res[1].setAllocate(nowTask);
+            nowTask.num1 = res[0];
+            nowTask.num2 = res[1];
+            delete_ready(0);
+        }
+        else if(nowTask.getTimeToRun() == 0){// finish task
 
+            Resource num1_nowTask = nowTask.num1;
+            Resource num2_nowTask = nowTask.num2;
+            num1_nowTask.getFree();
+            num2_nowTask.getFree();
+            nowTask.state = "finish";
+            nowTask.getResources()[0][1] = "0";
+            nowTask.getResources()[1][1] = "0";
+
+            nowTask = ready[0];
+            nowTask.state = "running";
+            nowTask.setTimeToRun(nowTask.getTimeToRun() - 1);
+            nowTask.resources[0][1] = "1";
+            nowTask.resources[1][1] = "1";
+            isFreeResource(nowTask.getResources()[0][0], 1 );
+            isFreeResource(nowTask.getResources()[1][0], 2 );
+            res[0].setAllocate(nowTask);
+            res[1].setAllocate(nowTask);
+            nowTask.num1 = res[0];
+            nowTask.num2 = res[1];
+            delete_ready(0);
+
+        }
+
+        else {
+            nowTask.setTimeToRun(nowTask.getTimeToRun() - 1 );
+        }
+    }
 
     void RR(int time){
         boolean isSet = false;
