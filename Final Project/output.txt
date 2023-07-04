@@ -1,0 +1,438 @@
+SFJ:
+Time : 1 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 2 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 3 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 4 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 5 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 6 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 7 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 8 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 9 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 10 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 11 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 12 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 13 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 14 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 15 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 16 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 17 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 18 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 19 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 20 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 21 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 22 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 23 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 24 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+
+
+FCFS:
+Time : 1 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 2 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 3 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 4 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 5 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 6 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 7 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 8 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 9 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 10 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 11 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 12 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 13 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t3, t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 14 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 15 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 16 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 17 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 18 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t4, t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 19 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 20 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 21 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 22 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 23 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 24 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+RR:
+
+Time : 1 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 2 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 3 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 4 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 5 - Now Task: t1
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t2, t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 6 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 7 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 8 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 9 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 10 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 11 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 12 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 13 - Now Task: t2
+quantum: 3
+R1: 2  R2: 2  R3: 3
+Priority queue: [ t4, t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 14 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 15 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 16 - Now Task: t4
+quantum: 3
+R1: 3  R2: 2  R3: 2
+Priority queue: [ t5, t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 17 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 18 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 19 - Now Task: t5
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ t3, ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 20 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 21 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 22 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 23 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
+Time : 24 - Now Task: t3
+quantum: 3
+R1: 2  R2: 3  R3: 2
+Priority queue: [ ]
+Waiting queue: [ ]
+----------------------------------------------------------------
